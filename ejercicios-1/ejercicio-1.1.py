@@ -11,12 +11,12 @@ crudo_dalto = 3.5
 #Diferencias de duraciòn
 
 diferencia_con_min = 100 - dalto_curso / otros_cursos_min * 100
-diferencia_con_max = 100 - dalto_curso * 1000 // otros_cursos_max / 10
+diferencia_con_max = round(100 - dalto_curso / otros_cursos_max * 100,2)
 diferencia_con_promedio = 100 - dalto_curso / otros_cursos_promedio * 100
 
 #Calculando el porcentaje de tiempo vacìo removido
-tiempo_vacio_promedio =  100 - otros_cursos_promedio * 1000 // crudo_promedio / 10
-tiempo_vacio_dalto =  100 - dalto_curso * 1000 // crudo_dalto / 10
+tiempo_vacio_promedio =  round(100 - otros_cursos_promedio / crudo_promedio * 100,2)
+tiempo_vacio_dalto =  round(100 - dalto_curso / crudo_dalto * 100,2)
 
 
 #Mostrando las diferencias de duraciòn (ejercicio A)
@@ -34,6 +34,6 @@ print(f'Este curso eliminò el {tiempo_vacio_dalto}% de tiempo vacio')
 print("----------------")
 
 #Mostrando diferencias si los cursos duraran 10 horas (ejercicio C)
-print(f'Ver 10 horas de este curso equivale a ver {otros_cursos_promedio * 100 // dalto_curso / 10} horas de otros cursos')
-print(f'Ver 10 horas de otros cursos equivale a ver {dalto_curso * 100 // otros_cursos_promedio / 10} horas de este curso')
+print(f'Ver 10 horas de este curso equivale a ver {round(otros_cursos_promedio / dalto_curso * 10,2)} horas de otros cursos')
+print(f'Ver 10 horas de otros cursos equivale a ver {dalto_curso / otros_cursos_promedio * 10} horas de este curso')
 print("----------------")
